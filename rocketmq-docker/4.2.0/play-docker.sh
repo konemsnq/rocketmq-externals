@@ -10,4 +10,4 @@ docker build -t apache/rocketmq-broker:4.2.0 ./rocketmq-broker
 # Run namesrv and broker
 
 docker run -d -p 9876:9876 --name rmqnamesrv -v /Users/MiYASAwA/Documents/githubRocketMQ/logName:/opt/logs/rocketmqlogs/ apache/rocketmq-namesrv:4.2.0
-docker run -d -p 10911:10911 -p 10909:10909 --name rmqbroker --link rmqnamesrv:namesrv -e "NAMESRV_ADDR=namesrv:9876" -v /Users/MiYASAwA/Documents/githubRocketMQ/logBroker:/opt/logs/rocketmqlogs/ apache/rocketmq-broker:4.2.0
+docker run -d -p 10911:10911 -p 10909:10909 --name rmqbroker --link rmqnamesrv:namesrv -e "NAMESRV_ADDR=namesrv:9876" apache/rocketmq-broker:4.2.0
